@@ -2,9 +2,12 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 
 dotenv.config();
-function mongo_function(){
+function connect(){
     mongoose
    .connect(process.env.MONGO)
+   .then(() => {
+    console.log('Connected to database');
+  })
    }
-export default mongo_function;
+export default connect;
   
